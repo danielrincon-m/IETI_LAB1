@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/ada-school/module-template/blob/main/ada.png">
+<img src="https://github.com/ada-school/module-template/blob/main/ada.png" alt="Holi">
 
 
 ## Spring Boot Rest API
@@ -13,14 +13,14 @@
 
 ## Growth Mindset 🤹🏽
 
-"Individuals who believe their talents can be developed (through hard work, good strategies, and input from others) have a growth mindset. They tend to achieve more than those with a more fixed mindset (those who believe their talents are innate gifts)" [What Having a "Growth Mindset" Actually means - Harvard Business Review](https://hbr.org/2016/01/what-having-a-growth-mindset-actually-means)  
+"Individuals who believe their talents can be developed (through hard work, good strategies, and input from others) have a growth mindset. They tend to achieve more than those with a more fixed mindset (those who believe their talents are innate gifts)" [What Having a "Growth Mindset" Actually means - Harvard Business Review](https://hbr.org/2016/01/what-having-a-growth-mindset-actually-means)
 
 
 **Main Topics**
- * Microservices.
- * RESTFUL API.
- * Richardson Maturity Model.
- * Dependencies Injection.
+* Microservices.
+* RESTFUL API.
+* Richardson Maturity Model.
+* Dependencies Injection.
 
 ## Codelab 🧪
 
@@ -29,21 +29,21 @@
 ### Part 1: Implementing the Users Microservice RESTFUL API
 
 1. Create a new project using the [Spring Initializr](https://start.spring.io/)
-  * Use either *Java* or *Kotlin* as programming language.
-  * Use Gradle as project option(if your computer is slow then use  Maven)
-  * Add Spring Web dependency before generating the project.
+* Use either *Java* or *Kotlin* as programming language.
+* Use Gradle as project option(if your computer is slow then use  Maven)
+* Add Spring Web dependency before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
 3. Create a new package called *dto* and inside define your *UserDto* object with at least the following fields:
-    * name.
-    * email.
-    * lastName.
-    * created.
+   * name.
+   * email.
+   * lastName.
+   * createdAt.
 4. Create a new package called *data* and inside define your *User* data object with at least the following fields:
-    * id.
-    * name.
-    * email.
-    * lastName.
-    * created.
+   * id.
+   * name.
+   * email.
+   * lastName.
+   * createdAt.
 5. Create a new package called *service* an inside create the following interface:
 
 **Java:**
@@ -61,19 +61,19 @@
          User update( User user, String userId );
      }
   ```
-  **Kotlin:**
+**Kotlin:**
   ```kotlin
       interface UserService {
 
          fun create( user: User): User
 
-         fun findById( String id ): User?
+         fun findById( String: id ): User?
          
          fun  all(): List<User>
 
-         fun deleteById( String id )
+         fun deleteById( String: id )
 
-         fun update( User user, String userId ): User
+         fun update( User: user, String: userId ): User
 
       }
   ```
@@ -90,7 +90,7 @@
    {
    }
   ```
-  **Kotlin:**
+**Kotlin:**
   ```kotlin
    @RestController
    @RequestMapping( "/v1/user" )
@@ -112,7 +112,7 @@
        }   
    }
   ```
-  **Kotlin:**
+**Kotlin:**
   ```kotlin
    @RestController
    @RequestMapping( "/v1/user" )
@@ -171,7 +171,7 @@
       }
    }      
   ```
-  **Kotlin:**
+**Kotlin:**
   ```kotlin
    @RestController
    @RequestMapping( "/v1/user" )
@@ -185,7 +185,7 @@
       }
       
       @GetMapping( "/{id}" )
-      fun findById( @PathVariable id: String )ResponseEntity<User> 
+      fun findById( @PathVariable id: String ): ResponseEntity<User> 
       {
          //TODO implement this method using UserService
          return null
@@ -221,25 +221,25 @@
 ### Part 2: Implementing the Tasks Microservice RESTFUL API
 
 1. Create a new project using the [Spring Initializr](https://start.spring.io/)
-  * Use either *Java* or *Kotlin* as programming language.
-  * Use Gradle as project option(if your computer is slow then use  Maven)
-  * Add Spring Web dependency before generating the project.
+* Use either *Java* or *Kotlin* as programming language.
+* Use Gradle as project option(if your computer is slow then use  Maven)
+* Add Spring Web dependency before generating the project.
 2. Create a new repository on Github and commit the files generated in 1.
 3. Create a new package called *dto* and inside define your *TaskDto* object with at least the following fields:
-    * name.
-    * description.
-    * status [TODO, DOING, REVIEW and DONE].
-    * assignedTo.
-    * dueDate.
-    * created.
+   * name.
+   * description.
+   * status [TODO, DOING, REVIEW and DONE].
+   * assignedTo.
+   * dueDate.
+   * created.
 4. Create a new package called *data* and inside define your *Task* data object with at least the following fields:
-    * id.
-    * name.
-    * description.
-    * status [TODO, DOING, REVIEW and DONE].
-    * assignedTo.
-    * dueDate.
-    * created.
+   * id.
+   * name.
+   * description.
+   * status [TODO, DOING, REVIEW and DONE].
+   * assignedTo.
+   * dueDate.
+   * created.
 5. Create a new package called *service* an inside create the following interface:
 
 **Java:**
@@ -257,19 +257,19 @@
          Task update( Task task, String id );
      }
   ```
-  **Kotlin:**
+**Kotlin:**
   ```kotlin
       interface TaskService {
 
          fun create( task: Task): Task
 
-         fun findById( String id ): Task?
+         fun findById( String: id ): Task?
          
          fun  all(): List<Task>
 
-         fun deleteById( String id )
+         fun deleteById( String: id )
 
-         fun update( Task task, String id ): Task
+         fun update( Task: task, String: id ): Task
 
       }
   ```
@@ -277,4 +277,3 @@
 7. Make your service implementation *TaskServiceHashMap* injectable using the *@Service* annotation.
 8. Implement you *TaskController* (try to avoid copy paste, use the User Microservice as reference but try doing it consciously).
 9. Test ALL the endpoints of your API using PostMan or any other tool of your preference.
-
