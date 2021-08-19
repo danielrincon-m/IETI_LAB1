@@ -1,16 +1,18 @@
 package edu.eci.ieti.restapi.dto;
 
+import java.util.Date;
+
 public class UserDto {
     private final String name;
     private final String email;
     private final String lastName;
-    private final String created;
+    private final Date createdAt;
 
-    public UserDto(String name, String email, String lastName, String created) {
+    public UserDto(String name, String email, String lastName, Date createdAt) {
         this.name = name;
         this.email = email;
         this.lastName = lastName;
-        this.created = created;
+        this.createdAt = createdAt;
     }
 
     public String getName() {
@@ -25,7 +27,7 @@ public class UserDto {
         return lastName;
     }
 
-    public String getCreated() {
-        return created;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 }
