@@ -91,10 +91,11 @@
    }
   ```
 **Kotlin:**
+
   ```kotlin
    @RestController
-   @RequestMapping( "/v1/user" )
-   class UserController()
+@RequestMapping("/v1/user")
+class UserController
   ```
 10. Inject your *UserService* implementation inside the *UserController* via the constructor:
 
