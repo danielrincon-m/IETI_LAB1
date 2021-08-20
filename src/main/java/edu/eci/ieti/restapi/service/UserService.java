@@ -11,7 +11,7 @@ public interface UserService {
 
     List<User> all();
 
-    void deleteById(String id);
+    boolean deleteById(String id);
 
     User update(User user, String userId);
 }
