@@ -21,26 +21,26 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<User>> all() {
         List<User> users = userService.all();
-        return new ResponseEntity<>(users, HttpStatus.OK);
+        return new ResponseEntity<>(users, HttpStatus.FOUND);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable String id) {
         User user = userService.findById(id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.FOUND);
     }
 
 
     @PostMapping
     public ResponseEntity<User> create(@RequestBody User userDto) {
         User user = userService.create(userDto);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<User> update(@RequestBody User userDto, @PathVariable String id) {
         User user = userService.update(userDto, id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/{id}")
