@@ -29,8 +29,7 @@ public class UserServiceHashMap implements UserService {
 
     @Override
     public boolean deleteById(String id) {
-        users.remove(id);
-        return true;
+        return users.remove(id) != null;
     }
 
     @Override
