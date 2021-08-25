@@ -1,16 +1,17 @@
 package edu.eci.ieti.restapi.data;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class User {
-    private final String id;
+    private String id;
     private final String name;
     private final String email;
     private final String lastName;
     private final Date createdAt;
 
     public User(String id, String name, String email, String lastName, Date createdAt) {
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.email = email;
         this.lastName = lastName;
@@ -19,6 +20,10 @@ public class User {
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
