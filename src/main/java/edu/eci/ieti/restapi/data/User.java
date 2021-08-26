@@ -1,5 +1,7 @@
 package edu.eci.ieti.restapi.data;
 
+import edu.eci.ieti.restapi.dto.UserDto;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -10,12 +12,12 @@ public class User {
     private final String lastName;
     private final Date createdAt;
 
-    public User(String id, String name, String email, String lastName, Date createdAt) {
+    public User(UserDto userDto) {
         this.id = UUID.randomUUID().toString();
-        this.name = name;
-        this.email = email;
-        this.lastName = lastName;
-        this.createdAt = createdAt;
+        this.name = userDto.getName();
+        this.email = userDto.getEmail();
+        this.lastName = userDto.getLastName();
+        this.createdAt = userDto.getCreatedAt();
     }
 
     public String getId() {

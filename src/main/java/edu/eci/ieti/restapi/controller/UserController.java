@@ -1,6 +1,7 @@
 package edu.eci.ieti.restapi.controller;
 
 import edu.eci.ieti.restapi.data.User;
+import edu.eci.ieti.restapi.dto.UserDto;
 import edu.eci.ieti.restapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,14 +33,14 @@ public class UserController {
 
 
     @PostMapping
-    public ResponseEntity<User> create(@RequestBody User userDto) {
-        User user = userService.create(userDto);
+    public ResponseEntity<User> create(@RequestBody UserDto userDto) {
+        User user = userService.create(new User(userDto));
         return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> update(@RequestBody User userDto, @PathVariable String id) {
-        User user = userService.update(userDto, id);
+    public ResponseEntity<User> update(@RequestBody UserDto userDto, @PathVariable String id) {
+        User user = userService.update(new User(userDto), id);
         return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
     }
 
